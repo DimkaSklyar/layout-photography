@@ -3,8 +3,45 @@
 @import "libs"
 
 /*==========  user style  ==========*/
-.test
-	color: #000
+.header-page
+	position: absolute
+	width: 100vw
+	z-index: 1000
+.wrapper
+	position: relative
+	margin-top: 6vh
+
+.mobile-menu-wrapper
+	display: none
+	+media-breakpoint-down(sm)
+		display: block
+
+.top-nav
+	flex: 0
+	margin-left: auto
+	ul
+		list-style: none
+		display: flex
+		margin: 0
+		padding: 0
+		& > li
+			display: block
+			& > a
+				padding: 10px
+				border-bottom: 1px solid transparent
+				text-decoration: none
+				color: #000
+				&:hover 
+					border-bottom-color: $color-1
+
+
+.top-slide
+	position: relative
+	width: 100vw
+	height: 94vh
+	display: flex
+	align-items: center
+
 /*==========  user style  ==========*/
 
 @import "media" // Always at the end

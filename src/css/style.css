@@ -1824,6 +1824,62 @@ html {
 }
 
 /*==========  user style  ==========*/
+.header-page {
+  position: absolute;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 6vh;
+}
+
+.mobile-menu-wrapper {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-menu-wrapper {
+    display: block;
+  }
+}
+
+.top-nav {
+  flex: 0;
+  margin-left: auto;
+}
+
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav ul > li {
+  display: block;
+}
+
+.top-nav ul > li > a {
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  color: #000;
+}
+
+.top-nav ul > li > a:hover {
+  border-bottom-color: #ffcc00;
+}
+
+.top-slide {
+  position: relative;
+  width: 100vw;
+  height: 94vh;
+  display: flex;
+  align-items: center;
+}
+
 /*==========  user style  ==========*/
 /*==========  Desktop First  ==========*/
 /*==========  Mobile First  ==========*/
