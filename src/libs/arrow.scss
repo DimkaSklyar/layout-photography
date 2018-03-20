@@ -1,0 +1,63 @@
+@keyframes bounceArrow {
+	0%, 20%, 50%, 80%, 100% {
+		transform: translateY(0px);
+		opacity: 0.4;
+	}
+	40% {
+		transform: translateY(5px);
+		opacity: 0.8;
+	}
+	60% {
+		transform: translateY(10px);
+		opacity: 1;
+	}
+}
+
+.arrow{
+	margin: 100px auto 0;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	/*background: red;*/
+	cursor: pointer;
+	span{
+		// background: rgba(#fff,0.3);
+		width: 38px;
+		height: 15px;
+		animation: 2s bounceArrow infinite;
+		display: block;
+		&:first-child{
+			padding: 4px 4px 0;
+			border-radius: 3px 3px 0 0;
+		}
+		&:last-child{
+			padding:0 4px 4px;
+			border-radius: 0 0 3px 3px;
+		}
+		&:after,&:before{
+			content: "";
+			height: 2px;
+			width: 19px;
+			position: absolute;
+			// border-radius: 3px;
+			// margin:3px;
+		}
+		&:first-child:after,&:first-child:before{
+			background: #ffcc00;
+		}
+		&:last-child:after,&:last-child:before{
+			background: #fff;
+		}
+		&:before{
+			transform-origin: left;
+			transform: rotate(40deg);
+			left: 5px;
+		}
+		&:after{
+			transform-origin: right;
+			transform: rotate(-40deg);
+			right: 5px;
+		}
+	}
+}
