@@ -1828,11 +1828,13 @@ html {
   position: absolute;
   width: 100vw;
   z-index: 1000;
+  background: #000000;
 }
 
-.wrapper {
+.top-menu {
   position: relative;
-  margin-top: 6vh;
+  height: 10vh;
+  align-items: flex-end;
 }
 
 .mobile-menu-wrapper {
@@ -1873,10 +1875,7 @@ html {
 }
 
 .top-slide {
-  position: relative;
-  width: 100vw;
-  height: 94vh;
-  display: flex;
+  height: 90vh;
   align-items: center;
 }
 
