@@ -209,20 +209,26 @@ body
 .section-wrapper
 	padding-top: 150px
 	padding-bottom: 30px
-	margin-bottom: 70px
+	margin-bottom: 150px
 	color: $color-dark
 	background-color: $color-section
 	position: relative
+	+media-breakpoint-down(md)
+		padding-top: 100px
+		padding-bottom: 100px
+		margin-bottom: 0
 	.decor-image
 		position: absolute
 		top: 100px
-		width: 30vw
-		height: 650px
+		width: 25vw
+		height: 660px
 		background-image: url('../img/bcg-sec-1.jpg')
 		background-repeat: no-repeat
-		background-size: cover
-		background-position: center top
+		background-size: auto
+		background-position: center center
 		overflow: hidden
+		+media-breakpoint-down(md)
+			display: none
 		&::after
 			content: ''
 			position: absolute
@@ -243,8 +249,42 @@ body
 	.works-items
 		margin-bottom: 40px
 
+
+.clients
+	padding: 65px 0
+	background: url("../img/business-man-and-woman-handshake-in-work-office-picjumbo-com.png") no-repeat
+	background-size: cover
+	color: $color-light
+	overflow: hidden
+	h2
+		text-align: center
+		margin-bottom: 20px
+	&-items
+		padding-bottom: 45px
+		position: relative
+		&::before
+			content: ''
+			width: 2px
+			height: 50vh
+			position: absolute
+			left: -4vw
+			background-color: darken($color-dec-dark,2)
+		&::after
+			content: ''
+			width: 15vw
+			height: 2px
+			position: absolute
+			left: -8vw
+			bottom: -10%
+			background-color: darken($color-dec-dark,2)
+.m-left
+	padding-left: 15px
 .justify-content-end
 	justify-content: flex-end
+.justify-content-center
+	justify-content: center
+.align-items-center
+	align-items: center
 .w-100
 	display: none
 	+media-breakpoint-down(md)
@@ -280,7 +320,118 @@ body
 .btn-color-d
 	background-color: $color-dark
 	color: $color-light
+.btn-color-tr
+	border: 1px solid $color-1
+	color: $color-1
+	text-transform: uppercase
+	font-weight: 600
+	margin-left: 7vw
+	margin-top: 40px
+.padding-0
+	padding: 0
+.portfolio
+	.wrapper-flex
+		display: flex
+		height: 100%
+		position: relative
+		background-color: $color-2
+		&::before
+			content: ''
+			position: absolute
+			width: calc(100% + 51px)
+			height: 100%
+			top: 52px
+			left: 0
+			border: 1px solid $color-dark
+			border-left: none
+	&-description
+		padding-left: 75px
+		padding-right: 75px
+		h2
+			font-weight: 600
+			margin-bottom: 50px
+		p
+			margin-bottom: 30px
+			font-weight: 300
+		a
+			font-weight: 600
+			text-decoration: none
+			color: $color-dark
+.row-float
+	padding: 85px 0 
+	.block
+		float: left
+		background-color: #ccc
+		margin: 15px
+		position: relative
+	.block-portfolio
+		width: calc(30% - 35px)
+		height: 840px
+		margin-left: 0
+		margin-right: 35px
+		&::before
+			content: ''
+			position: absolute
+			width: 100%
+			height: 750spx
+			background-color: $color-section
+			left: 50px
+			top: 0
+			z-index: 0
+	.block-photo-1
+		width: calc(24% - 30px)
+		height: 465px
+		background-color: #aaa
+	.block-photo-2
+		width: calc(35% - 30px)
+		height: 235px
+		background-color: #bbb
+	.block-photo-3
+		width: calc(11% - 15px)
+		height: 235px
+		margin-right: 0
+		background-color: #ddd
+	.block-photo-4
+		width: calc(23% - 30px)
+		height: 235px
+		background-color: #123456
+	.block-photo-5
+		width: calc(23% - 15px)
+		height: 235px
+		margin-right: 0
+		background-color: #123456
+	.block-photo-6
+		width: calc(24% - 30px)
+		height: 250px
+		margin-top: -15px
+		background-color: #55deca
+	.block-photo-7
+		width: calc(46% - 15px)
+		height: 220px
+		margin-right: 0
+		background-color: #556677
 
+.porttfolio-photo
+	img
+		position: absolute
+		top: 50%
+		left: 50%
+		width: auto
+		height: auto
+		max-height: none
+		max-width: none
+		min-height: 100%
+		min-width: 100%
+		transform: translate(-50%, -50%)
+		-ms-transform: translate(-50%, -50%)
+		-webkit-transform: translate(-50%, -50%)
+	a
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		overflow: hidden
 /*==========  user style  ==========*/
 
 @import "media" // Always at the end
