@@ -3,52 +3,83 @@
 @import "libs"
 
 /*==========  user style  ==========*/
+h1,h2,h3
+	font-family: trirong, sans-serif
+	font-weight: 200
+	margin-bottom: .4em
+h2
+	font-size: 40px
+h3
+	font-size: 26px
+h4
+	font-size: 16px
+
 body
 	font-family: $default-font
 .header-page
 	position: absolute
-	width: 100vw
+	width: 100%
 	z-index: 1000
-
+	+media-breakpoint-down(sm)
+		background-color: rgba(darken($color-dark,10%),.95)
 
 .top-menu
 	height: 12vh
 	padding-bottom: 11px
 	position: relative
-	align-items: flex-end
-	min-height: 100px
+	align-items: baseline
+	min-height: 60px
+	padding-top: 55px
+	+media-breakpoint-down(md)
+		height: auto
+		padding-top: 10px
+		margin: 15px 0
 	+media-breakpoint-down(sm)
-		align-items: baseline
-		margin-top: 10px
+		align-items: center
 
 .mobile-menu-wrapper
 	display: none
 	+media-breakpoint-down(sm)
 		display: block
+	+media-breakpoint-down(xs)
+		flex: 0
 .logo-wrapper
 	+media-breakpoint-down(md)
 		display: flex
 		justify-content: center
-		margin-top: 10px
+	+media-breakpoint-down(sm)
+		justify-content: flex-start
+		flex: 0
+		margin-left: auto
+	+media-breakpoint-down(xs)
+		flex: 0
+		margin-left: auto
 .logo
 	font-weight: 500
 	text-transform: uppercase
 	font-size: 20px
 	a
-		color: $text-color-light
+		color: $color-light
 		text-decoration: none
 		display: flex
 		align-items: baseline
 	img
 		margin-right: 5px
+		+media-breakpoint-down(sm)
+			display: block
+		+media-breakpoint-down(xs)
+			display: none
 
 .top-nav
 	flex: 0
 	margin-left: auto
+	position: relative
 	+media-breakpoint-down(md)
 		justify-content: center
 		display: flex
 		margin: 10px auto 0
+	+media-breakpoint-down(sm)
+		margin: 0
 	ul
 		list-style: none
 		display: flex
@@ -58,12 +89,19 @@ body
 			display: none
 		& > li
 			display: block
+			+media-breakpoint-down(sm)
+				margin-top: 15px
+				&:first-child
+					margin-top: 30px
+			&:first-child
+				a
+					margin-right: 0
 			& > a
 				padding: 10px
 				margin-right: 15px
 				border-bottom: 1px solid transparent
 				text-decoration: none
-				color: $text-color-light
+				color: $color-light
 				font-weight: 600
 				&.active
 					border-bottom-color: $color-1
@@ -79,7 +117,7 @@ body
 	&::before
 		content: ''
 		position: absolute
-		//background-color: rgba($bcg-color,.5)
+		//background-color: rgba($color-dark,.5)
 		top: 0
 		bottom: 0
 		left: 0
@@ -90,7 +128,7 @@ body
 		height: 100vh
 		align-items: center
 		min-height: 550px
-		color: $text-color-light
+		color: $color-light
 		@at-root 
 			%decorationHeader
 				content: ''
@@ -107,17 +145,21 @@ body
 			@extend %decorationHeader
 			transform: rotate(90deg)
 		.greeting
+			margin-top: 15px
+			margin-left: 15px
 			h1
 				font-weight: 300
 				font-size: 60px
 				line-height: 1.2
 				font-family: trirong, sans-serif
+				+media-breakpoint-down(sm)
+					font-size: 35px
 			p
 				font-weight: 200
 			a
 				text-decoration: none
 				font-weight: 500
-				margin-top: 40px
+				margin-top: 30px
 
 .social
 	position: absolute
@@ -137,6 +179,9 @@ body
 		font-size: 1.5em
 		border-top: 1px solid #ccc
 		border-left: 1px solid #ccc
+		+media-breakpoint-down(xs)
+			width: 250px
+			height: 50px
 		@at-root 
 			%decorationHeader-2
 				content: ''
@@ -159,7 +204,52 @@ body
 			margin-right: 15px
 			padding: 0 5px
 			a
-				color: $text-color-light
+				color: $color-light
+
+.section-wrapper
+	padding-top: 150px
+	padding-bottom: 30px
+	margin-bottom: 70px
+	color: $color-dark
+	background-color: $color-section
+	position: relative
+	.decor-image
+		position: absolute
+		top: 100px
+		width: 30vw
+		height: 650px
+		background-image: url('../img/bcg-sec-1.jpg')
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center top
+		overflow: hidden
+		&::after
+			content: ''
+			position: absolute
+			width: 5vw
+			height: 5vw
+			background: rgba($color-light,.9)
+			box-shadow: 10px 5vw 0 0 rgba($color-dark,.6),-5vw -15px 0 0 rgba($color-dark,.8)
+			right: 0
+	.works
+		h3
+			margin-bottom: 20px
+	.works-items
+		h4
+			text-transform: uppercase
+			font-weight: 200
+.description
+	font-weight: 200
+	.works-items
+		margin-bottom: 40px
+
+.justify-content-end
+	justify-content: flex-end
+.w-100
+	display: none
+	+media-breakpoint-down(md)
+		display: block
+
 .arrow
 	+media-breakpoint-down(sm)
 		display: none
@@ -167,26 +257,29 @@ body
 	position: absolute
 	width: 70px
 	height: 80px
-	background-color: rgba(lighten($bcg-color,15%),.3)
+	background-color: rgba(lighten($color-dark,15%),.3)
 	z-index: 0
 .bottom-left
 	bottom: 0
 	left: 0
-	box-shadow: -10px -70px 0 0 rgba(darken($bcg-color,5%),.5), 60px 15px 0 0 rgba(lighten($bcg-color,5%),.5) 
+	box-shadow: -10px -70px 0 0 rgba(darken($color-dark,5%),.5), 60px 15px 0 0 rgba(lighten($color-dark,5%),.5) 
 	+media-breakpoint-down(sm)
 		display: none
 .bottom-right
 	bottom: 0
 	right: 0
-	box-shadow: 10px -70px 0 0 rgba(darken($bcg-color,5%),.5), -60px 15px 0 0 rgba(lighten($bcg-color,5%),.5) 
+	box-shadow: 10px -70px 0 0 rgba(darken($color-dark,5%),.5), -60px 15px 0 0 rgba(lighten($color-dark,5%),.5) 
 .btn
 	display: inline-block
-	padding: 15px 55px
+	padding: 15px 45px
 	border-radius: 30px
 	font-weight: 500
 .btn-color-y
 	background-color: $color-2
-	color: $bcg-color
+	color: $color-dark
+.btn-color-d
+	background-color: $color-dark
+	color: $color-light
 
 /*==========  user style  ==========*/
 
