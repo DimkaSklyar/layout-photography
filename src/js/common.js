@@ -19,4 +19,8 @@ var touch = $('#touch-menu');
 	});
 
 
+    // $('.block').each(function(){
+    //     $(this).width($(this).width() - ($(this).width()%1));
+    // });
+
 });

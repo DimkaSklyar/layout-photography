@@ -361,9 +361,9 @@ body
 	padding: 85px 0 
 	.block
 		float: left
-		background-color: #ccc
 		margin: 15px
 		position: relative
+		z-index: 1
 	.block-portfolio
 		width: calc(30% - 35px)
 		height: 840px
@@ -373,7 +373,7 @@ body
 			content: ''
 			position: absolute
 			width: 100%
-			height: 750spx
+			height: 750px
 			background-color: $color-section
 			left: 50px
 			top: 0
@@ -384,54 +384,124 @@ body
 		background-color: #aaa
 	.block-photo-2
 		width: calc(35% - 30px)
-		height: 235px
-		background-color: #bbb
+		height: 234px
 	.block-photo-3
 		width: calc(11% - 15px)
-		height: 235px
+		height: 234px
 		margin-right: 0
-		background-color: #ddd
 	.block-photo-4
 		width: calc(23% - 30px)
-		height: 235px
-		background-color: #123456
+		height: 234px
 	.block-photo-5
 		width: calc(23% - 15px)
-		height: 235px
+		height: 234px
 		margin-right: 0
-		background-color: #123456
 	.block-photo-6
 		width: calc(24% - 30px)
-		height: 250px
+		height: 249px
 		margin-top: -15px
-		background-color: #55deca
 	.block-photo-7
 		width: calc(46% - 15px)
-		height: 220px
+		height: 219px
 		margin-right: 0
-		background-color: #556677
 
 .porttfolio-photo
-	img
-		position: absolute
-		top: 50%
-		left: 50%
-		width: auto
-		height: auto
-		max-height: none
-		max-width: none
-		min-height: 100%
-		min-width: 100%
-		transform: translate(-50%, -50%)
-		-ms-transform: translate(-50%, -50%)
-		-webkit-transform: translate(-50%, -50%)
-	a
+	overflow: hidden
+	figure
+		margin: 0
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			width: auto
+			height: auto
+			max-height: none
+			max-width: none
+			min-height: 100%
+			min-width: 100%
+			transform: translate(-50%, -50%)
+		
+.portfolio
+	&-social-share
 		position: absolute
 		top: 0
-		bottom: 0
 		left: 0
-		right: 0
+		background-color: rgba($color-dark, .7)
+		width: 100%
+		height: 100%
+		opacity: 0
+		transition: all .6s ease
+		z-index: 2
+		@at-root
+			%crossImg
+				content: ''
+				position: absolute
+				top: 25%
+				left: 50%
+				height: 75px
+				width: 1px
+				// transform: translate(-50%, -40%)
+		&::before
+			@extend %crossImg
+			background-color: $color-1
+		&::after
+			@extend %crossImg
+			background-color: $color-light
+			transform: rotate(90deg)
+		.wrapper-bcg
+			position: absolute
+			display: flex
+			align-items: flex-end
+			flex-wrap: wrap
+			bottom: 2%
+			justify-content: center
+			width: 100%
+			a
+				color: $color-1
+				font-size: 1.3em
+				padding: 7px
+			a:first-child
+				flex-basis: 100%
+				text-align: center
+				color: $color-light
+				padding: 0 5px
+				font-size: 1.2em
+.block:hover .portfolio-social-share
+	opacity: 1
+
+.blog
+	background-color: $color-section
+	padding: 55px 25px
+	margin-top: 50px
+	&-item
+		background-color: #fff
+		padding-bottom: 65px
+	.gatter-2
+		padding-left: 30px
+		padding-right: 30px 
+	h2
+		text-align: center
+		& + p
+			text-align: center
+			margin-bottom: 60px
+	figure
+		position: relative
+		width: 100%
+		height: 265px
 		overflow: hidden
+		img
+			position: absolute
+			top: 50%
+			left: 50%
+			width: auto
+			height: auto
+			max-height: none
+			max-width: none
+			min-height: 100%
+			min-width: 100%
+			transform: translate(-50%, -50%)
+	&-description
+		padding: 0 1vw
 /*==========  user style  ==========*/
 
 @import "media" // Always at the end
