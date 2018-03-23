@@ -468,14 +468,25 @@ body
 				font-size: 1.2em
 .block:hover .portfolio-social-share
 	opacity: 1
-
+.lo-container
+	max-width: 1530px
+.over-item
+	position: relative
+	top: 100px
+	box-shadow: 0px 0px 80px 2px rgba(43, 46, 102, 0.1)
 .blog
 	background-color: $color-section
-	padding: 55px 25px
+	padding: 55px 25px 0
 	margin-top: 50px
 	&-item
 		background-color: #fff
 		padding-bottom: 65px
+		transition: all .5s ease-in-out
+		&:hover
+			box-shadow: 0px 0px 80px 1px rgba(43, 46, 102, 0.3)
+			transform: translateY(-5px)
+			position: relative
+			z-index: 20
 	.gatter-2
 		padding-left: 30px
 		padding-right: 30px 
@@ -483,12 +494,16 @@ body
 		text-align: center
 		& + p
 			text-align: center
-			margin-bottom: 60px
+			margin: 0 -20px -40px
+			font-size: 20px
+			font-weight: 300
 	figure
 		position: relative
 		width: 100%
 		height: 265px
 		overflow: hidden
+		margin-bottom: 25px
+		z-index: 2
 		img
 			position: absolute
 			top: 50%
@@ -501,7 +516,140 @@ body
 			min-width: 100%
 			transform: translate(-50%, -50%)
 	&-description
-		padding: 0 1vw
+		padding-left: 35px
+		padding-right: 30px
+		color: $color-dark
+		h4
+			font-size: 20px
+			font-weight: bold
+			margin-bottom: 20px
+			letter-spacing: -.5px
+		.meta-info
+			font-size: 15px
+			margin-bottom: 20px
+			.category
+				font-weight: 600
+			.date
+				font-weight: 300
+		a
+			font-family: muli,sans-serif
+			font-weight: 400
+			text-decoration: 
+			color: $color-link
+			position: relative
+			z-index: 2
+			&::before
+				content: ''
+				position: absolute
+				background: $color-link-2
+				width: 96px
+				height: 10px
+				z-index: -1
+				left: 1px
+				bottom: 2px
+	&-text
+		font-weight: 300
+
+.feedback
+	margin-top: 195px
+	background: url('../img/brooke-lark-175644.png')
+	background-size: cover
+	position: relative
+	padding: 70px 0
+	border-bottom: 1px solid #55577d
+	&::before
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		content: ''
+		background-color: rgba($color-dark,.98)
+	h2
+		text-align: center
+		color: $color-light
+		font-weight: 200
+	&-form
+		width: 500px
+		text-align: center
+		input[type="text"],textarea
+			background-color: rgba($color-light,.65)
+			font-size: 15px
+			padding: 17px 25px
+			font-family: muli, sans-serif
+			font-weight: 400
+			color: $color-dark
+		input[type="text"]
+			margin-bottom: 25px
+			width: 100%
+			border: 0
+			&::placeholder
+				color: $color-dark
+		textarea
+			margin-bottom: 30px
+			width: 100%
+			&::placeholder
+				color: $color-dark
+		button
+			border: 0
+			cursor: pointer
+			text-transform: uppercase
+			font-size: 15px
+			font-weight: 300
+			font-family: muli, sans-serif
+
+.footer-page
+	background: $color-dark
+	padding: 90px 0 30px
+	border-bottom: 1px solid #55577d
+	color: $color-light
+	h3
+		font-family: muli, sans-serif
+		font-size: 24px
+		font-weight: 300
+	h4
+		font-family: muli, sans-serif
+		font-size: 20px
+		font-weight: 600
+	p
+		font-size: 14px
+		font-weight: 300
+	.logo-bottom
+		margin-bottom: 25px
+	address
+		margin-bottom: 30px
+		p
+			margin-bottom: 0
+		a
+			font-size: 14px
+			color: $color-light
+	.sub-social
+		h4
+			margin-bottom: 0
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+			li
+				display: inline-block
+				font-size: 23px
+				&:first-child a
+						padding-left: 0
+				a
+					color: $color-light
+					padding: 5px
+
+
+
+
+.copyright
+	background: $color-dark
+	text-align: center
+	p
+		font-weight: 200
+		color: #55577d
+		padding: 20px 0
+		margin: 0
 /*==========  user style  ==========*/
 
 @import "media" // Always at the end

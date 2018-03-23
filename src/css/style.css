@@ -5773,15 +5773,33 @@ body {
   opacity: 1;
 }
 
+.lo-container {
+  max-width: 1530px;
+}
+
+.over-item {
+  position: relative;
+  top: 100px;
+  box-shadow: 0px 0px 80px 2px rgba(43, 46, 102, 0.1);
+}
+
 .blog {
   background-color: #f7f7fc;
-  padding: 55px 25px;
+  padding: 55px 25px 0;
   margin-top: 50px;
 }
 
 .blog-item {
   background-color: #fff;
   padding-bottom: 65px;
+  transition: all .5s ease-in-out;
+}
+
+.blog-item:hover {
+  box-shadow: 0px 0px 80px 1px rgba(43, 46, 102, 0.3);
+  transform: translateY(-5px);
+  position: relative;
+  z-index: 20;
 }
 
 .blog .gatter-2 {
@@ -5795,7 +5813,9 @@ body {
 
 .blog h2 + p {
   text-align: center;
-  margin-bottom: 60px;
+  margin: 0 -20px -40px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .blog figure {
@@ -5803,6 +5823,8 @@ body {
   width: 100%;
   height: 265px;
   overflow: hidden;
+  margin-bottom: 25px;
+  z-index: 2;
 }
 
 .blog figure img {
@@ -5819,7 +5841,196 @@ body {
 }
 
 .blog-description {
-  padding: 0 1vw;
+  padding-left: 35px;
+  padding-right: 30px;
+  color: #2b2d5c;
+}
+
+.blog-description h4 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: -.5px;
+}
+
+.blog-description .meta-info {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-description .meta-info .category {
+  font-weight: 600;
+}
+
+.blog-description .meta-info .date {
+  font-weight: 300;
+}
+
+.blog-description a {
+  font-family: muli,sans-serif;
+  font-weight: 400;
+  color: #595666;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-description a::before {
+  content: '';
+  position: absolute;
+  background: #ffe066;
+  width: 96px;
+  height: 10px;
+  z-index: -1;
+  left: 1px;
+  bottom: 2px;
+}
+
+.blog-text {
+  font-weight: 300;
+}
+
+.feedback {
+  margin-top: 195px;
+  background: url("../img/brooke-lark-175644.png");
+  background-size: cover;
+  position: relative;
+  padding: 70px 0;
+  border-bottom: 1px solid #55577d;
+}
+
+.feedback::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  content: '';
+  background-color: rgba(43, 45, 92, 0.98);
+}
+
+.feedback h2 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 200;
+}
+
+.feedback-form {
+  width: 500px;
+  text-align: center;
+}
+
+.feedback-form input[type="text"], .feedback-form textarea {
+  background-color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+  padding: 17px 25px;
+  font-family: muli, sans-serif;
+  font-weight: 400;
+  color: #2b2d5c;
+}
+
+.feedback-form input[type="text"] {
+  margin-bottom: 25px;
+  width: 100%;
+  border: 0;
+}
+
+.feedback-form input[type="text"]::placeholder {
+  color: #2b2d5c;
+}
+
+.feedback-form textarea {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.feedback-form textarea::placeholder {
+  color: #2b2d5c;
+}
+
+.feedback-form button {
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 300;
+  font-family: muli, sans-serif;
+}
+
+.footer-page {
+  background: #2b2d5c;
+  padding: 90px 0 30px;
+  border-bottom: 1px solid #55577d;
+  color: #ffffff;
+}
+
+.footer-page h3 {
+  font-family: muli, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.footer-page h4 {
+  font-family: muli, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.footer-page p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.footer-page .logo-bottom {
+  margin-bottom: 25px;
+}
+
+.footer-page address {
+  margin-bottom: 30px;
+}
+
+.footer-page address p {
+  margin-bottom: 0;
+}
+
+.footer-page address a {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.footer-page .sub-social h4 {
+  margin-bottom: 0;
+}
+
+.footer-page .sub-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-page .sub-social ul li {
+  display: inline-block;
+  font-size: 23px;
+}
+
+.footer-page .sub-social ul li:first-child a {
+  padding-left: 0;
+}
+
+.footer-page .sub-social ul li a {
+  color: #ffffff;
+  padding: 5px;
+}
+
+.copyright {
+  background: #2b2d5c;
+  text-align: center;
+}
+
+.copyright p {
+  font-weight: 200;
+  color: #55577d;
+  padding: 20px 0;
+  margin: 0;
 }
 
 /*==========  user style  ==========*/
