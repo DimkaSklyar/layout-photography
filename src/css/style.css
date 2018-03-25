@@ -5075,6 +5075,10 @@ html {
 }
 
 /*==========  user style  ==========*/
+a {
+  color: #ffffff;
+}
+
 h1, h2, h3 {
   font-family: trirong, sans-serif;
   font-weight: 200;
@@ -5246,7 +5250,7 @@ body {
   }
 }
 
-.top-nav ul > li:first-child a {
+.top-nav ul > li:last-child a {
   margin-right: 0;
 }
 
@@ -5514,6 +5518,18 @@ body {
   align-items: center;
 }
 
+.align-items-baseline {
+  align-items: baseline;
+}
+
+.offset-no-margin {
+  margin-left: 70px;
+}
+
+.no-gatter {
+  padding: 0;
+}
+
 .w-100 {
   display: none;
 }
@@ -5774,7 +5790,18 @@ body {
 }
 
 .lo-container {
+  position: relative;
   max-width: 1530px;
+}
+
+.lo-container::before {
+  content: '';
+  position: absolute;
+  height: 82%;
+  width: calc(67% + 30px);
+  border: 3px solid #fff;
+  right: -27px;
+  top: 70px;
 }
 
 .over-item {
@@ -5783,10 +5810,56 @@ body {
   box-shadow: 0px 0px 80px 2px rgba(43, 46, 102, 0.1);
 }
 
+.section-blog {
+  position: relative;
+}
+
+.section-blog::before {
+  content: '';
+  width: 2px;
+  height: 320px;
+  position: absolute;
+  right: 15vw;
+  top: -250px;
+  background-color: #2b2d5c;
+  z-index: 2;
+}
+
+.section-blog::after {
+  content: '';
+  width: 13vw;
+  height: 2px;
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  background-color: #2b2d5c;
+}
+
 .blog {
   background-color: #f7f7fc;
   padding: 55px 25px 0;
   margin-top: 50px;
+  position: relative;
+}
+
+.blog::before {
+  content: '';
+  width: 2px;
+  height: 320px;
+  position: absolute;
+  bottom: 0;
+  left: 15vw;
+  background-color: #2b2d5c;
+}
+
+.blog::after {
+  content: '';
+  width: 260px;
+  height: 2px;
+  position: absolute;
+  bottom: 45px;
+  left: 5vw;
+  background-color: #2b2d5c;
 }
 
 .blog-item {
@@ -5898,6 +5971,27 @@ body {
   border-bottom: 1px solid #55577d;
 }
 
+.feedback-decoration::before {
+  content: '';
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  left: -4vw;
+  bottom: -170px;
+  background: url("../img/decor.png") no-repeat;
+}
+
+.feedback-decoration::after {
+  content: '';
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: url("../img/decor.png") no-repeat;
+  transform: scale(-1, 1);
+}
+
 .feedback::before {
   position: absolute;
   top: 0;
@@ -5967,6 +6061,7 @@ body {
   font-family: muli, sans-serif;
   font-size: 24px;
   font-weight: 300;
+  margin-bottom: 20px;
 }
 
 .footer-page h4 {
@@ -6021,6 +6116,91 @@ body {
   padding: 5px;
 }
 
+.footer-page .latest-post-item {
+  margin-bottom: 10px;
+}
+
+.footer-page .latest-post-item::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.footer-page .latest-post-item figure {
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+
+.footer-page .latest-post-item figure img {
+  height: 100%;
+}
+
+.footer-page .latest-post-item-desc {
+  margin-left: 100px;
+}
+
+.footer-page .latest-post-item-desc p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.footer-page .latest-post-item-desc span {
+  font-size: 14px;
+}
+
+.footer-page .latest-post-item-desc span.category {
+  font-weight: 600;
+}
+
+.footer-page .latest-post-item-desc span.date {
+  font-weight: 300;
+}
+
+.footer-page .latest-post-more {
+  text-transform: uppercase;
+  margin-left: 100px;
+  font-weight: 600;
+  font-family: muli, sans-serif;
+  color: #ffffff;
+}
+
+.footer-page .quick-link ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-page .quick-link ul li {
+  margin-bottom: 5px;
+}
+
+.footer-page .insta {
+  flex: 0 0 18%;
+}
+
+.footer-page .insta-footer .ins-block {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.footer-page .insta-footer .inst-1 {
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+
+.footer-page .insta-footer .inst-4, .footer-page .insta-footer .inst-5 {
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.footer-page .insta-footer .inst-6 {
+  margin-top: 5px;
+}
+
 .copyright {
   background: #2b2d5c;
   text-align: center;
@@ -6028,7 +6208,7 @@ body {
 
 .copyright p {
   font-weight: 200;
-  color: #55577d;
+  color: rgba(255, 255, 255, 0.25);
   padding: 20px 0;
   margin: 0;
 }
