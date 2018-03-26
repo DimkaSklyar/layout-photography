@@ -18,9 +18,44 @@ var touch = $('#touch-menu');
 		$(this).toggleClass('open');
 	});
 
+    treeDotEndText();
 
-    // $('.block').each(function(){
-    //     $(this).width($(this).width() - ($(this).width()%1));
-    // });
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    dots: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
 
 });
+
+$(window).resize(function(){
+    treeDotEndText();
+});
+
+var treeDotEndText = function(){
+var size = 150,
+    newsContent= $('.blog-text'),
+    newsText = newsContent.text();
+    console.log($(document).width() );
+if ($(document).width() < 840){
+    size = 120;
+    console.log(size);
+    }
+    else{
+        size = 150;
+    }
+if(newsText.length > size){
+	newsContent.text(newsText.slice(0, size) + ' ...');
+}  
+}
