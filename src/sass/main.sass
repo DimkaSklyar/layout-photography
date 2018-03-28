@@ -105,10 +105,14 @@ body
 				text-decoration: none
 				color: $color-light
 				font-weight: 600
+				transition: .2s
 				&.active
 					border-bottom-color: $color-1
 				&:hover 
 					border-bottom-color: $color-1
+				&:active
+					border-bottom-color: lighten($color-1,60)
+					color: $color-1
 
 .slide
 	background-image: url('../img/header.jpg')
@@ -162,6 +166,13 @@ body
 				text-decoration: none
 				font-weight: 500
 				margin-top: 30px
+				transition: .5s
+				&:hover
+					transform: scale(1.03)
+					color: $color-dark
+				&:active
+					transform: scale(.97)
+					color: $color-dark
 
 .social
 	position: absolute
@@ -207,6 +218,10 @@ body
 			padding: 0 5px
 			a
 				color: $color-light
+				display: block
+				transition: .3s
+				&:hover
+					color: $color-2
 
 .section-wrapper
 	padding-top: 150px
@@ -250,6 +265,39 @@ body
 	font-weight: 200
 	.works-items
 		margin-bottom: 40px
+	a
+		transition: .3s
+		text-decoration: none
+		&:hover
+			transform: scale(1.03)
+			color: $color-light
+		&:active
+			transform: scale(.97)
+			color: $color-light
+	.work-item
+		figure
+			a
+				overflow: hidden
+				position: relative
+				display: inline-block
+				&:hover::before
+					opacity: 1
+					transition: .4s
+				&::before
+					font-family: FontAwesome
+					content: '\f002'
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: 0
+					background-color: rgba($color-dark,.5)
+					text-align: center
+					line-height: 5
+					font-size: 25px
+					color: $color-light
+					opacity: 0
+
 
 
 .clients
@@ -294,12 +342,22 @@ body
 	align-items: baseline
 .offset-no-margin
 	margin-left: 70px
+	+media-breakpoint-down(lg)
+		margin: 0
 .no-gatter
 	padding: 0
+	+media-breakpoint-down(md)
+		padding-left: 15px 
+		padding-right: 15px 
 .w-100
 	display: none
 	+media-breakpoint-down(md)
 		display: block
+.mb-footer
+	+media-breakpoint-down(md)
+		margin-bottom: 30px
+	+media-breakpoint-down(sm)
+		justify-content: flex-start
 
 .arrow
 	+media-breakpoint-down(sm)
@@ -385,8 +443,20 @@ body
 			font-weight: 600
 			text-decoration: none
 			color: $color-dark
+			
 .row-float
 	padding: 85px 0 
+	& > a
+		transition: .4s
+		text-decoration: none
+		&:visited
+			color: $color-2
+		&:hover
+			transform: scale(1.03)
+			color: $color-2
+		&:active
+			transform: scale(.97)
+			color: $color-2
 	.block
 		float: left
 		margin: 15px
@@ -703,6 +773,8 @@ body
 			color: $color-link
 			position: relative
 			z-index: 2
+			transition: .4s
+			text-decoration: none
 			&::before
 				content: ''
 				position: absolute
@@ -712,6 +784,7 @@ body
 				z-index: -1
 				left: 1px
 				bottom: 2px
+				transition: .4s
 	&-text
 		font-weight: 300
 		overflow: hidden
@@ -732,6 +805,8 @@ body
 			left: -4vw
 			bottom: -170px
 			background: url('../img/decor.png') no-repeat
+			+media-breakpoint-down(lg)
+				background: none
 		&::after
 			content: ''
 			width: 20%
@@ -741,6 +816,8 @@ body
 			bottom: 0
 			background: url('../img/decor.png') no-repeat
 			transform: scale(-1,1)
+			+media-breakpoint-down(lg)
+				background: none
 	&::before
 		position: absolute
 		top: 0
@@ -758,6 +835,8 @@ body
 		width: 500px
 		min-width: 300px
 		text-align: center
+		+media-breakpoint-down(sm)
+			width: 90%
 		input[type="text"],textarea
 			background-color: rgba($color-light,.65)
 			font-size: 15px
@@ -783,6 +862,12 @@ body
 			font-size: 15px
 			font-weight: 300
 			font-family: muli, sans-serif
+			transition: .4s
+			outline: 0 none
+			&:hover
+				transform: scale(1.03)
+			&:active
+				transform: scale(.97)
 
 .footer-page
 	background: $color-dark
@@ -865,12 +950,23 @@ body
 			list-style: none
 			li
 				margin-bottom: 5px
+				a
+					&:hover
+						color: $color-light
 	.insta
 		flex: 0 0 18%
 	.insta-footer
+		width: 217px
 		.ins-block
 			float: left
 			margin-bottom: 10px
+			transition: .4s
+			&:nth-child(odd):hover
+				transform: rotate(2deg)
+				filter: saturate(2)
+			&:nth-child(even):hover
+				transform: rotate(-2deg)
+				filter: saturate(2)
 		.inst-1
 			width: calc(50% - 10px)
 			margin-right: 20px

@@ -22,7 +22,7 @@ var touch = $('#touch-menu');
 
 $('.owl-carousel').owlCarousel({
     loop:true,
-    margin:10,
+    margin:-10,
     dots: true,
     responsive:{
         0:{
@@ -37,11 +37,22 @@ $('.owl-carousel').owlCarousel({
     }
 })
 
+$(function(){
+        $("a[href^='#']").click(function(){
+                var _href = $(this).attr("href");
+                $("html, body").animate({scrollTop: $(_href).offset().top+"px"},900);
+                return false;
+        });
+});
+
+
 });
 
 $(window).resize(function(){
     treeDotEndText();
 });
+
+
 
 var treeDotEndText = function(){
 var size = 150,

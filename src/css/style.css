@@ -5721,6 +5721,7 @@ body {
   text-decoration: none;
   color: #ffffff;
   font-weight: 600;
+  transition: .2s;
 }
 
 .top-nav ul > li > a.active {
@@ -5729,6 +5730,11 @@ body {
 
 .top-nav ul > li > a:hover {
   border-bottom-color: #ffcc00;
+}
+
+.top-nav ul > li > a:active {
+  border-bottom-color: white;
+  color: #ffcc00;
 }
 
 .slide {
@@ -5802,6 +5808,17 @@ body {
   text-decoration: none;
   font-weight: 500;
   margin-top: 30px;
+  transition: .5s;
+}
+
+.slide-align .greeting a:hover {
+  transform: scale(1.03);
+  color: #2b2d5c;
+}
+
+.slide-align .greeting a:active {
+  transform: scale(0.97);
+  color: #2b2d5c;
 }
 
 .social {
@@ -5861,6 +5878,12 @@ body {
 
 .social ul li a {
   color: #ffffff;
+  display: block;
+  transition: .3s;
+}
+
+.social ul li a:hover {
+  color: #f2c200;
 }
 
 .section-wrapper {
@@ -5923,6 +5946,48 @@ body {
 
 .description .works-items {
   margin-bottom: 40px;
+}
+
+.description a {
+  transition: .3s;
+  text-decoration: none;
+}
+
+.description a:hover {
+  transform: scale(1.03);
+  color: #ffffff;
+}
+
+.description a:active {
+  transform: scale(0.97);
+  color: #ffffff;
+}
+
+.description .work-item figure a {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.description .work-item figure a:hover::before {
+  opacity: 1;
+  transition: .4s;
+}
+
+.description .work-item figure a::before {
+  font-family: FontAwesome;
+  content: '\f002';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(43, 45, 92, 0.5);
+  text-align: center;
+  line-height: 5;
+  font-size: 25px;
+  color: #ffffff;
+  opacity: 0;
 }
 
 .clients {
@@ -5991,8 +6056,21 @@ body {
   margin-left: 70px;
 }
 
+@media (max-width: 1199px) {
+  .offset-no-margin {
+    margin: 0;
+  }
+}
+
 .no-gatter {
   padding: 0;
+}
+
+@media (max-width: 991px) {
+  .no-gatter {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .w-100 {
@@ -6002,6 +6080,18 @@ body {
 @media (max-width: 991px) {
   .w-100 {
     display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .mb-footer {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .mb-footer {
+    justify-content: flex-start;
   }
 }
 
@@ -6149,6 +6239,25 @@ body {
 
 .row-float {
   padding: 85px 0;
+}
+
+.row-float > a {
+  transition: .4s;
+  text-decoration: none;
+}
+
+.row-float > a:visited {
+  color: #f2c200;
+}
+
+.row-float > a:hover {
+  transform: scale(1.03);
+  color: #f2c200;
+}
+
+.row-float > a:active {
+  transform: scale(0.97);
+  color: #f2c200;
 }
 
 .row-float .block {
@@ -6660,6 +6769,8 @@ body {
   color: #595666;
   position: relative;
   z-index: 2;
+  transition: .4s;
+  text-decoration: none;
 }
 
 .blog-description a::before {
@@ -6671,6 +6782,7 @@ body {
   z-index: -1;
   left: 1px;
   bottom: 2px;
+  transition: .4s;
 }
 
 .blog-text {
@@ -6697,6 +6809,12 @@ body {
   background: url("../img/decor.png") no-repeat;
 }
 
+@media (max-width: 1199px) {
+  .feedback-decoration::before {
+    background: none;
+  }
+}
+
 .feedback-decoration::after {
   content: '';
   width: 20%;
@@ -6706,6 +6824,12 @@ body {
   bottom: 0;
   background: url("../img/decor.png") no-repeat;
   transform: scale(-1, 1);
+}
+
+@media (max-width: 1199px) {
+  .feedback-decoration::after {
+    background: none;
+  }
 }
 
 .feedback::before {
@@ -6729,6 +6853,12 @@ body {
   width: 500px;
   min-width: 300px;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .feedback-form {
+    width: 90%;
+  }
 }
 
 .feedback-form input[type="text"], .feedback-form textarea {
@@ -6766,6 +6896,16 @@ body {
   font-size: 15px;
   font-weight: 300;
   font-family: muli, sans-serif;
+  transition: .4s;
+  outline: 0 none;
+}
+
+.feedback-form button:hover {
+  transform: scale(1.03);
+}
+
+.feedback-form button:active {
+  transform: scale(0.97);
 }
 
 .footer-page {
@@ -6896,13 +7036,32 @@ body {
   margin-bottom: 5px;
 }
 
+.footer-page .quick-link ul li a:hover {
+  color: #ffffff;
+}
+
 .footer-page .insta {
   flex: 0 0 18%;
+}
+
+.footer-page .insta-footer {
+  width: 217px;
 }
 
 .footer-page .insta-footer .ins-block {
   float: left;
   margin-bottom: 10px;
+  transition: .4s;
+}
+
+.footer-page .insta-footer .ins-block:nth-child(odd):hover {
+  transform: rotate(2deg);
+  filter: saturate(2);
+}
+
+.footer-page .insta-footer .ins-block:nth-child(even):hover {
+  transform: rotate(-2deg);
+  filter: saturate(2);
 }
 
 .footer-page .insta-footer .inst-1 {
