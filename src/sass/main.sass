@@ -355,15 +355,32 @@ body
 			left: 0
 			border: 1px solid $color-dark
 			border-left: none
+			+media-breakpoint-down(lg)
+				width: 98%
 	&-description
 		padding-left: 75px
 		padding-right: 75px
+		+media-breakpoint-down(xl)
+			padding-left: 25px
+			padding-right: 25px
+		+media-breakpoint-down(lg)
+			padding: 25px
+			padding-top: 0
 		h2
 			font-weight: 600
 			margin-bottom: 50px
+			+media-breakpoint-down(lg)
+				margin-bottom: 15px
+				margin-top: 15px
 		p
 			margin-bottom: 30px
 			font-weight: 300
+			+media-breakpoint-down(lg)
+				max-height: 120px
+				height: 120px
+			+media-breakpoint-down(xs)
+				max-height: 160px
+				height: 160px
 		a
 			font-weight: 600
 			text-decoration: none
@@ -375,11 +392,23 @@ body
 		margin: 15px
 		position: relative
 		z-index: 1
+		+media-breakpoint-down(lg)
+			margin: 5px
+		+media-breakpoint-down(xs)
+			&:nth-child(2n)
+				display: none
 	.block-portfolio
 		width: calc(30% - 35px)
 		height: 840px
 		margin-left: 0
 		margin-right: 35px
+		+media-breakpoint-down(lg)
+			width: 100%
+			margin: 0
+			height: 250px
+			margin-bottom: 60px
+		+media-breakpoint-down(xs)
+			height: 300px
 		&::before
 			content: ''
 			position: absolute
@@ -389,32 +418,62 @@ body
 			left: 50px
 			top: 0
 			z-index: 0
+			+media-breakpoint-down(lg)
+				display: none
 	.block-photo-1
 		width: calc(24% - 30px)
 		height: 465px
 		background-color: #aaa
+		+media-breakpoint-down(lg)
+			width: calc(45% - 10px)
 	.block-photo-2
 		width: calc(35% - 30px)
 		height: 234px
+		+media-breakpoint-down(lg)
+			width: calc(35% - 10px)
+		+media-breakpoint-down(xs)
+			width: calc(100% - 10px)
+			margin-top: 10px
+			margin-bottom: 10px
 	.block-photo-3
 		width: calc(11% - 15px)
 		height: 234px
 		margin-right: 0
+		+media-breakpoint-down(lg)
+			width: calc(20% - 10px)
 	.block-photo-4
 		width: calc(23% - 30px)
 		height: 234px
+		+media-breakpoint-down(lg)
+			width: calc(27% - 10px)
+		+media-breakpoint-down(xs)
+			width: calc(100% - 10px)
+			margin-top: 10px
+			margin-bottom: 10px
 	.block-photo-5
 		width: calc(23% - 15px)
 		height: 234px
 		margin-right: 0
+		+media-breakpoint-down(lg)
+			width: calc(28% - 10px)
 	.block-photo-6
 		width: calc(24% - 30px)
 		height: 249px
 		margin-top: -15px
+		+media-breakpoint-down(lg)
+			width: calc(45% - 10px)
+			margin-top: -5px
+			height: 230px
+		+media-breakpoint-down(xs)
+			width: calc(100% - 10px)
+			margin-top: 10px
+			margin-bottom: 10px
 	.block-photo-7
 		width: calc(46% - 15px)
 		height: 219px
 		margin-right: 0
+		+media-breakpoint-down(lg)
+			width: calc(55% - 10px)
 
 .porttfolio-photo
 	overflow: hidden
